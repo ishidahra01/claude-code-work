@@ -20,6 +20,7 @@ repo-root/
 │  └─ skills/      # Reusable Claude Code skills
 ├─ slides/
 │  └─ deck.md      # Marp slide source
+├─ dist/           # Generated export outputs (gitignored)
 ├─ themes/
 │  └─ default.css  # Custom Marp theme
 ├─ assets/         # Images, fonts, and other static assets
@@ -53,13 +54,25 @@ npm run preview
 
 ### Export slides
 
+All outputs are written to the `dist/` directory.
+
 ```bash
 # Export to HTML
-npx marp slides/deck.md --output output/deck.html
+npm run build:html
 
 # Export to PDF
-npx marp slides/deck.md --pdf --output output/deck.pdf
+npm run build:pdf
+
+# Export to PPTX
+npm run build:pptx
+
+# Export all formats at once
+npm run build:all
 ```
+
+> **Note:** PDF and PPTX export require a Chromium-based browser (e.g. Google Chrome or Chromium) to be installed on your system.
+> On Linux you can install it with `sudo apt-get install -y chromium-browser` (Debian/Ubuntu) or the equivalent for your distribution.
+> On macOS, install [Google Chrome](https://www.google.com/chrome/) or run `brew install --cask chromium`.
 
 ## License
 
