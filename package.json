@@ -5,8 +5,10 @@
   "private": true,
   "scripts": {
     "preview": "marp slides/deck.md --watch",
-    "build": "marp slides/deck.md --output output/deck.html",
-    "build:pdf": "marp slides/deck.md --pdf --output output/deck.pdf"
+    "build:html": "marp slides/deck.md --html --output dist/deck.html",
+    "build:pdf": "marp slides/deck.md --pdf --output dist/deck.pdf",
+    "build:pptx": "marp slides/deck.md --pptx --output dist/deck.pptx",
+    "build:all": "npm run build:html && npm run build:pdf && npm run build:pptx"
   },
   "devDependencies": {
     "@marp-team/marp-cli": "^3.4.0"
