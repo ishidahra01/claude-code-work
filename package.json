@@ -1,0 +1,14 @@
+{
+  "name": "claude-code-work",
+  "version": "0.1.0",
+  "description": "Slide-generation workflow powered by Marp, Claude Code, Skills, and Git",
+  "private": true,
+  "scripts": {
+    "preview": "marp slides/deck.md --watch",
+    "build": "marp slides/deck.md --output output/deck.html",
+    "build:pdf": "marp slides/deck.md --pdf --output output/deck.pdf"
+  },
+  "devDependencies": {
+    "@marp-team/marp-cli": "^3.4.0"
+  }
+}
