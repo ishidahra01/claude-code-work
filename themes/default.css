@@ -1,0 +1,30 @@
+/* @theme default */
+
+@import 'default';
+
+:root {
+  --color-background: #ffffff;
+  --color-foreground: #1a1a2e;
+  --color-highlight: #0f3460;
+  --color-dimmed: #6c757d;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+section {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+}
+
+h1 {
+  color: var(--color-highlight);
+}
+
+h2 {
+  color: var(--color-highlight);
+  border-bottom: 2px solid var(--color-highlight);
+  padding-bottom: 0.2em;
+}
+
+a {
+  color: var(--color-highlight);
+}
