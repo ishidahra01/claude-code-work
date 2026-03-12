@@ -2,29 +2,166 @@
 
 @import 'default';
 
+/* ─── Design tokens ─────────────────────────────────────────── */
 :root {
   --color-background: #ffffff;
   --color-foreground: #1a1a2e;
-  --color-highlight: #0f3460;
-  --color-dimmed: #6c757d;
+  --color-highlight:  #0f3460;
+  --color-accent:     #e94560;
+  --color-dimmed:     #6c757d;
+  --color-code-bg:    #f4f6f8;
+  --color-border:     #d0d7de;
   font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 28px;
 }
 
+/* ─── Base slide ─────────────────────────────────────────────── */
 section {
   background-color: var(--color-background);
   color: var(--color-foreground);
+  padding: 60px 72px;
 }
 
+/* ─── Headings ───────────────────────────────────────────────── */
 h1 {
   color: var(--color-highlight);
+  font-size: 2em;
+  line-height: 1.4;
 }
 
 h2 {
   color: var(--color-highlight);
-  border-bottom: 2px solid var(--color-highlight);
-  padding-bottom: 0.2em;
+  font-size: 1.5em;
+  border-bottom: 3px solid var(--color-highlight);
+  padding-bottom: 0.25em;
+  margin-bottom: 0.75em;
 }
 
+h3 {
+  color: var(--color-highlight);
+  font-size: 1.1em;
+  margin-bottom: 0.4em;
+}
+
+/* ─── Links ──────────────────────────────────────────────────── */
 a {
   color: var(--color-highlight);
+}
+
+/* ─── Title slide  (use `<!-- _class: title -->`) ────────────── */
+section.title {
+  background-color: var(--color-highlight);
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+section.title h1 {
+  color: #ffffff;
+  font-size: 2.4em;
+  margin-bottom: 0.3em;
+}
+
+section.title p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.85em;
+}
+
+/* ─── Code blocks ────────────────────────────────────────────── */
+pre {
+  background-color: var(--color-code-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: 1em 1.2em;
+  font-size: 0.65em;
+  line-height: 1.6;
+  overflow-x: auto;
+}
+
+code {
+  font-family: 'Cascadia Code', 'Fira Code', 'Consolas', monospace;
+  font-size: 0.8em;
+  background-color: var(--color-code-bg);
+  border-radius: 3px;
+  padding: 0.1em 0.35em;
+}
+
+pre code {
+  background-color: transparent;
+  padding: 0;
+  font-size: 1em;
+}
+
+/* ─── Tables ─────────────────────────────────────────────────── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.75em;
+  margin-top: 0.5em;
+}
+
+th {
+  background-color: var(--color-highlight);
+  color: #ffffff;
+  padding: 0.5em 0.75em;
+  text-align: left;
+  font-weight: 600;
+}
+
+td {
+  padding: 0.45em 0.75em;
+  border-bottom: 1px solid var(--color-border);
+}
+
+tr:nth-child(even) td {
+  background-color: var(--color-code-bg);
+}
+
+/* ─── Comparison / two-column slide  (use `<!-- _class: cols -->`) */
+section.cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr;
+  column-gap: 2em;
+}
+
+section.cols h2 {
+  grid-column: 1 / -1;
+}
+
+section.cols > p,
+section.cols > ul,
+section.cols > ol,
+section.cols > blockquote,
+section.cols > pre {
+  margin: 0;
+}
+
+/* ─── Bullet lists ───────────────────────────────────────────── */
+ul, ol {
+  padding-left: 1.4em;
+  line-height: 1.75;
+}
+
+li + li {
+  margin-top: 0.25em;
+}
+
+/* ─── Blockquote (callout / highlight) ──────────────────────── */
+blockquote {
+  border-left: 4px solid var(--color-accent);
+  margin: 1em 0;
+  padding: 0.5em 1em;
+  color: var(--color-dimmed);
+  font-style: italic;
+  background-color: var(--color-code-bg);
+  border-radius: 0 4px 4px 0;
+}
+
+/* ─── Pagination ─────────────────────────────────────────────── */
+section::after {
+  font-size: 0.5em;
+  color: var(--color-dimmed);
 }
